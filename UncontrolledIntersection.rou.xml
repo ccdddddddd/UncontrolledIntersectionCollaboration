@@ -1,0 +1,39 @@
+<routes>
+   <route edges="A d" id="1"/>
+   <route edges="A c" id="2"/>
+   <route edges="A b" id="3"/>
+   <route edges="B a" id="4"/>
+   <route edges="B d" id="5"/>
+   <route edges="B c" id="6"/>
+   <route edges="C b" id="7"/>
+   <route edges="C a" id="8"/>
+   <route edges="C d" id="9"/>
+   <route edges="D c" id="10"/>
+   <route edges="D b" id="11"/>
+   <route edges="D a" id="12"/>
+        <!--
+        <tranship from="0" to="0" departPos="1" arrivalPos="180"/>
+
+    <vehicle id="train0" depart="20">
+        <route edges="0 1"/>
+        <stop containerStop="ct_1" until="80" duration="40"/>
+        <stop containerStop="ct_2" until="180" duration="10"/>
+    </vehicle>
+
+    <vehicle id="train0" depart="50">
+        <route edges="0 1"/>
+        <stop lane="0_0" duration="20" startPos="20" endPos="30"/>
+    </vehicle>
+
+    <vehicle id="truck0" depart="containerTriggered">
+        <route edges="1/4to2/4 2/4to3/4 3/4to4/4" departPos="30"/>
+        <stop lane="1/4to2/4_0" duration="20" startPos="40" endPos="60"/>
+    </vehicle>
+    -->
+
+</routes>
+<!--
+        <vehicles vehicleName_show="1" vehicleName_size="80.00" vehicleName_color="205,167,223"/>
+-->
+
+
