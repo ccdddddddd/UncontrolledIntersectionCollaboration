@@ -72,6 +72,8 @@ for i=1:1:numOfVehs
     vSchlang=[vSchlang,i];
     eSchlang=[eSchlang;k,i];
 end
+% lStrich=l(2:end)
+% lStrich(rank)
 % 创建一个空的cell数组
 A = cell(1, numOfVehs);
 B = cell(1, numOfVehs);

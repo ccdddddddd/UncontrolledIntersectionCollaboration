@@ -1,0 +1,312 @@
+close('all');
+clc;
+import traci.constants;
+isVehControled=1;
+is4Video=0;
+calibrationVars.vMin= 3;
+calibrationVars.vMax=20;
+calibrationVars.aMin=-3;
+calibrationVars.aMax=1.5;
+calibrationVars.dt=0.2;
+calibrationVars.kGen=2;
+calibrationVars.kp=0.25;
+calibrationVars.kv=0.7;
+calibrationVars.D=30;
+% 设置仿真时间
+SIM_STEPS = [1 2000];
+% beginTime = SIM_STEPS(1);
+duration =  SIM_STEPS(2);
+% endTime =  SIM_STEPS(1) +  SIM_STEPS(2) - 1;
+traci.start(strcat('sumo-gui -c ./','complexUncontrolledIntersection.sumocfg --start'));
+plotFlag=1;
+speedProfile = cell(1, 10);
+disProfile = cell(1, 10);
+% 读取XML文件并将其存储在一个名为xmlDoc的变量中
+xmlDoc = xmlread('complexMapUncontrolledIntersection.net.xml'); 
+DEPARTSPEEDexample=3;
+for i = 1:1: duration
+    traci.simulation.step();
+    %% 放置车辆
+    if i==1
+        traci.gui.setZoom('View #0', 300);
+        if is4Video
+            pause(2);
+        end
+        if plotFlag==111
+            calibrationVars.vMax=10;
+            %             traci.vehicle.add('1','5',DEPARTPOS='100',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            %             traci.vehicle.add('2','12',DEPARTPOS='90',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            %             traci.vehicle.add('3','10',DEPARTPOS='75',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('1','5',DEPARTPOS='100',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('2','12',DEPARTPOS='90',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('3','10',DEPARTPOS='75',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('4','9',DEPARTPOS='70',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('5','4',DEPARTPOS='60',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('6','1',DEPARTPOS='50',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('7','7',DEPARTPOS='40',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('8','6',DEPARTPOS='30',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('9','8',DEPARTPOS='20',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('10','3',DEPARTPOS='10',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+        else
+            traci.vehicle.add('1','5',DEPARTPOS='100',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('2','12',DEPARTPOS='90',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('3','10',DEPARTPOS='70',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('4','9',DEPARTPOS='70',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('5','4',DEPARTPOS='60',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('6','1',DEPARTPOS='50',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('7','7',DEPARTPOS='40',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('8','6',DEPARTPOS='30',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('9','8',DEPARTPOS='20',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            traci.vehicle.add('10','3',DEPARTPOS='10',DEPARTSPEED=num2str(DEPARTSPEEDexample));
+            %             traci.vehicle.add('1','5',DEPARTPOS='100',DEPARTSPEED='10');
+            %             traci.vehicle.add('2','12',DEPARTPOS='90',DEPARTSPEED='10');
+            %             traci.vehicle.add('3','10',DEPARTPOS='80',DEPARTSPEED='6');
+            %             traci.vehicle.add('4','9',DEPARTPOS='70',DEPARTSPEED='10');
+            %             traci.vehicle.add('5','4',DEPARTPOS='60',DEPARTSPEED='10');
+            %             traci.vehicle.add('6','1',DEPARTPOS='50',DEPARTSPEED='10');
+            %             traci.vehicle.add('7','7',DEPARTPOS='40',DEPARTSPEED='10');
+            %             traci.vehicle.add('8','6',DEPARTPOS='30',DEPARTSPEED='10');
+            %             traci.vehicle.add('9','8',DEPARTPOS='20',DEPARTSPEED='10');
+            %             traci.vehicle.add('10','3',DEPARTPOS='10',DEPARTSPEED='10');
+        end
+    end
+    %% get所有车并且计算他们的dis2center,velocity,accel
+    if i>1
+        vehicleIdList={};
+        routeIDs=[];
+        dis2center=[];
+        velocity=[];
+        accel=[];
+        % 创建一个空的二列cell数组
+        laneIDwithVehNum = cell(0, 2);
+        currentVehicleIds=traci.vehicle.getIDList();  % 获取在仿真中的所有车辆
+        % 将单元数组转换为数值数组
+        numericIds = cellfun(@str2num, currentVehicleIds);
+        % 按照数字顺序排序
+        sortedIds = sort(numericIds);
+        % 将数值数组转换回单元数组
+        sortedCellIds = cellfun(@num2str, num2cell(sortedIds), 'UniformOutput', false);
+        if plotFlag
+            for iterSpeedProfile=1:1:10
+                if ismember(iterSpeedProfile, numericIds)
+                    speedProfile{iterSpeedProfile} =[speedProfile{iterSpeedProfile},traci.vehicle.getSpeed(num2str(iterSpeedProfile))];
+                end
+                if ismember(iterSpeedProfile, numericIds) && ismember(traci.vehicle.getRoadID(num2str(iterSpeedProfile)), {'A', 'B', 'C', 'D'})
+                    disProfile{iterSpeedProfile} =[disProfile{iterSpeedProfile},traci.vehicle.getLanePosition(num2str(iterSpeedProfile))];
+                end
+            end
+        end
+        for VehicleIdCell=sortedCellIds
+            vehicleId=VehicleIdCell{1};
+            if i==2 && isVehControled==1
+                traci.vehicle.setSpeedMode(vehicleId,0);
+            end
+            edgeId=traci.vehicle.getRoadID(vehicleId);
+            if ismember(edgeId, {'A', 'B', 'C', 'D'})
+                vehicleIdList=[vehicleIdList,vehicleId];
+                routeIDChar=traci.vehicle.getRouteID(vehicleId);
+                routeID=str2num(routeIDChar);
+                routeIDs=[routeIDs,routeID];
+                laneID=traci.vehicle.getLaneID(vehicleId);
+                lengthLaneID=traci.lane.getLength(laneID);
+                dis2centerSingle=lengthLaneID-traci.vehicle.getLanePosition(vehicleId);
+                % dis2center=[dis2center,dis2centerSingle];
+                velocitySingle=traci.vehicle.getSpeed(vehicleId);
+                velocity=[velocity,velocitySingle];
+                accelSingle=traci.vehicle.getAccel(vehicleId);
+                accel=[accel,accelSingle];
+                % 计算车辆在路口将要通行的lane
+                route=traci.vehicle.getRoute(vehicleId);
+                laneIndex = traci.vehicle.getLaneIndex(vehicleId);
+                % route
+                % laneIndex
+                laneInJunction=getJunctionLaneID(route,laneIndex,xmlDoc);
+                if strcmp('error', laneInJunction)
+                    linkLaneID=traci.lane.getLinks(traci.vehicle.getLaneID(vehicleId));
+                    routeBackup={route{1},linkLaneID{1}(1)};
+                    laneInJunction=getJunctionLaneID(routeBackup,laneIndex,xmlDoc);
+                end
+                if strcmp(laneInJunction,':J1_3_0')
+                    dis2center=[dis2center,dis2centerSingle+0.5*traci.lane.getLength(laneInJunction)+0.5*traci.lane.getLength(':J1_16_0')];
+                elseif strcmp(laneInJunction,':J1_11_0')
+                    dis2center=[dis2center,dis2centerSingle+0.5*traci.lane.getLength(laneInJunction)+0.5*traci.lane.getLength(':J1_17_0')];
+                else
+                    dis2center=[dis2center,dis2centerSingle+0.5*traci.lane.getLength(laneInJunction)];
+                end
+                if strcmp(vehicleId,':J1_3_0')
+
+                % 检查laneIDwithVehNum的第一列是否已包含当前车道ID
+                isExist = false;
+                for j = 1:size(laneIDwithVehNum, 1)
+                    if strcmp(laneIDwithVehNum{j, 1}, laneInJunction)
+                        % 如果存在，则将车辆数量追加到第二列
+                        laneIDwithVehNum{j, 2} = [laneIDwithVehNum{j, 2}, length(vehicleIdList)];
+                        isExist = true;
+                        break;
+                    end
+                end
+                % 如果不存在，则在末尾插入新的行
+                if ~isExist
+                    laneIDwithVehNum{end+1, 1} = laneInJunction;
+                    laneIDwithVehNum{end, 2} = length(vehicleIdList);
+                end
+%             else
+%                 if traci.vehicle.getSpeedMode(vehicleId)==0
+%                     traci.vehicle.setSpeedMode(vehicleId, 31);
+%                     traci.vehicle.setSpeed(vehicleId, calibrationVars.vMax);
+%                 end
+            end
+        end
+        %% 修改laneIDwithVehNum来，考虑左转的lane被分开成两段在内
+        % 检查并添加新列
+        targetLane1 = ':J1_11_0';
+        targetLane2 = ':J1_3_0';
+        newColumn1Data = {':J1_17_0', laneIDwithVehNum{find(strcmp(laneIDwithVehNum(:, 1), targetLane1)), 2}};
+        newColumn2Data = {':J1_16_0', laneIDwithVehNum{find(strcmp(laneIDwithVehNum(:, 1), targetLane2)), 2}};
+        % 根据找到的目标车道分别增加新列
+        if ~isempty(find(strcmp(laneIDwithVehNum(:, 1), targetLane1)))
+            laneIDwithVehNum= [laneIDwithVehNum;newColumn1Data];
+        end
+        if ~isempty(find(strcmp(laneIDwithVehNum(:, 1), targetLane2)))
+            laneIDwithVehNum= [laneIDwithVehNum;newColumn2Data];
+        end
+        numOfVehs=length(vehicleIdList);
+        pConflict = cell(1, numOfVehs);
+        for iter=1:1:numOfVehs
+            % foundLaneIDList={};
+            conflictLanes={};
+            % 遍历laneIDwithVehNum数组的每一行
+            for rowIdx = 1:size(laneIDwithVehNum, 1)
+                % 检查当前行第二列是否包含数字 i
+                if ismember(iter, laneIDwithVehNum{rowIdx, 2})
+                    % 找到后，输出这一行的第一列内容
+                    foundLaneID = laneIDwithVehNum{rowIdx, 1};
+                    % foundLaneIDList = [foundLaneIDList,foundLaneID];
+                    conflictLanes=[conflictLanes,traci.lane.getInternalFoes(foundLaneID),foundLaneID];
+                    % fprintf('Number %d is in the row with Lane ID: %s\n', iter, foundLaneID);
+                    % 由于找到后就可以结束搜索，所以添加 break 语句
+                    % break;
+                end
+            end
+            % 将char数组转换为字符串数组
+            strLanes = cellfun(@char, conflictLanes, 'UniformOutput', false);
+            % 使用unique函数去除重复元素
+            [~, idx] = unique(strLanes);
+            uniqueLanes = conflictLanes(sort(idx));
+            % 现在uniqueLanes就是去重后的cell数组
+            conflictLanes=uniqueLanes;
+            % conflictLanes=[traci.lane.getInternalFoes(foundLaneID),foundLaneID];
+            pConflictSingle = [];
+            % 遍历conflictLanes中的每一个元素
+            for idx = 1:length(conflictLanes)
+                conflictLaneSingle = conflictLanes{idx};
+                % 查找conflictLaneSingle在laneIDwithVehNum第一列中的位置
+                rowIdx = find(strcmp(laneIDwithVehNum(:, 1), conflictLaneSingle));
+                % 如果找到匹配项，则将对应行的第二列元素添加到pConflictSingle末尾
+                if ~isempty(rowIdx)
+                    pConflictSingle = [pConflictSingle,laneIDwithVehNum{rowIdx, 2}];
+                end
+            end
+            % 使用unique函数去除重复元素
+            [~, idx] = unique(pConflictSingle);
+            pConflictSingleWithoutDuplicates = pConflictSingle(sort(idx));
+            pConflictSingle=pConflictSingleWithoutDuplicates;
+            % 搜寻小于dis2centerSingle的元素的序号们，存储为数组dis2centerNum
+            %             iter
+            %             dis2center
+            %             numOfVehs
+            %             vehicleIdList
+            dis2centerNum = find(dis2center < dis2center(iter));
+            % 求这两个数组routeIDnum和dis2centerNum的交集
+            %             if iter==7 || iter==8
+            %                 routeIDnum
+            %                 dis2centerNum
+            %             end
+            pConflict{iter} = intersect(pConflictSingle, dis2centerNum);
+        end
+        % 'A'、'B'、'C'、'D'
+        if numOfVehs~=0
+            vTarget=UncontrolledIntersectionCollaboration(numOfVehs,dis2center,velocity,accel,pConflict,calibrationVars);
+            % result = find((vTarget - velocity > 0.301) | (vTarget - velocity < -0.601));
+            %             if ~isempty(result)
+            %                 vTarget
+            %                 velocity
+            %             end
+        end
+        edgeList=traci.edge.getIDList;
+        unwanted_elements = {'A', 'B', 'C', 'D', 'a', 'b', 'c', 'd'};
+        edgeList = edgeList(~ismember(edgeList, unwanted_elements));
+        vehNumToGetThrough=numOfVehs;
+        for edgeID=edgeList
+            vehNumToGetThrough=vehNumToGetThrough+traci.edge.getLastStepVehicleNumber(edgeID{1});
+        end
+        if vehNumToGetThrough==0 && is4Video==0
+            disp(i*0.2);
+            system('taskkill /f /t /im sumo-gui.exe');
+            break;
+        end
+        if isVehControled==1
+            for iter=1:1:length(vehicleIdList)
+                traci.vehicle.setSpeed(vehicleIdList{iter},vTarget(iter));
+            end
+        end
+    end
+end
+if plotFlag
+    figure;
+    hold on;
+    for i = 1:10
+        plot(0.2:0.2:0.2*length(speedProfile{i}),speedProfile{i});
+    end
+    hold off;
+    figure;
+    hold on;
+    for i = 1:10
+        plot(0.2:0.2:0.2*length(disProfile{i}),disProfile{i});
+    end
+    hold off;
+    legend('vehicle 1','vehicle 2','vehicle 3','vehicle 4','vehicle 5','vehicle 6','vehicle 7','vehicle 8','vehicle 9','vehicle 10','Location','southeast');
+    title('Displacement-Time Curve of Multi Cars');
+    xlabel('t (s)');
+    ylabel('s (m)');
+end
+% routeIDs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+% dis2center = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+% dis2centerSingle = 10;
+% 
+% % 搜寻属于[1,11,10,9,5,4]的元素的序号们，存储为数组routeIDnum
+% routeIDnum = find(ismember(routeIDs, [1, 11, 10, 9, 5, 4]));
+% 
+% % 搜寻小于dis2centerSingle的元素的序号们，存储为数组dis2centerNum
+% dis2centerNum = find(dis2center < dis2centerSingle);
+% 
+% % 求这两个数组routeIDnum和dis2centerNum的交集
+% intersection = intersect(routeIDnum, dis2centerNum);
+% 
+% disp(intersection);
+
+% % 创建一个长度为10的cell数组speedProfile
+% speedProfile = cell(1, 10);
+% % 为speedProfile中的每个元素赋值为不同长度的数组
+% for i = 1:10
+%     speedProfile{i} = randi([1, 10], 1, i);  % 这里使用随机数作为示例
+% end
+% % 将每个cell中的数组都画在一张图中
+% figure;
+% hold on;
+% for i = 1:10
+%     plot(speedProfile{i});
+% end
+% hold off;
+
+
+% traci.lane.getInternalFoes(':J1_7_0')
+% traci.lane.getLinks('a_0')
+% traci.vehicle.getLine('2')
+% traci.lane.getLinks('A_0')
+% traci.lane.getFoes('A_0','d_0')
+% traci.lane.getFoes('A_0','b_0')
+% 
+% traci.lane.getLinkNumber(':J1_7_0')
+% 
+

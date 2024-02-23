@@ -14,14 +14,13 @@ calibrationVars.kv=0.7;
 calibrationVars.D=25;
 % 设置仿真时间
 SIM_STEPS = [1 2000];
-beginTime = SIM_STEPS(1);
+% beginTime = SIM_STEPS(1);
 duration =  SIM_STEPS(2);
-endTime =  SIM_STEPS(1) +  SIM_STEPS(2) - 1;
+% endTime =  SIM_STEPS(1) +  SIM_STEPS(2) - 1;
 traci.start(strcat('sumo-gui -c ./','UncontrolledIntersection.sumocfg --start'));
 plotFlag=0;
 speedProfile = cell(1, 10);
 disProfile = cell(1, 10);
-
 for i = 1:1: duration
     traci.simulation.step();
     %% 放置车辆
@@ -231,4 +230,14 @@ end
 % end
 % hold off;
 
+
+% traci.lane.getInternalFoes(':J1_7_0')
+% traci.lane.getLinks('a_0')
+% traci.vehicle.getLine('2')
+% traci.lane.getLinks('A_0')
+% traci.lane.getFoes('A_0','d_0')
+% traci.lane.getFoes('A_0','b_0')
+% 
+% traci.lane.getLinkNumber(':J1_7_0')
+% 
 
