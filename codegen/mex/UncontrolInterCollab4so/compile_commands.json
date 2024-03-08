@@ -1,0 +1,140 @@
+[
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  UncontrolInterCollab4so_data.cpp /Fobuild\\win64\\UncontrolInterCollab4so_data.obj",
+    "file": "UncontrolInterCollab4so_data.cpp",
+    "output": "build/win64/UncontrolInterCollab4so_data.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  rt_nonfinite.cpp /Fobuild\\win64\\rt_nonfinite.obj",
+    "file": "rt_nonfinite.cpp",
+    "output": "build/win64/rt_nonfinite.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  UncontrolInterCollab4so_initialize.cpp /Fobuild\\win64\\UncontrolInterCollab4so_initialize.obj",
+    "file": "UncontrolInterCollab4so_initialize.cpp",
+    "output": "build/win64/UncontrolInterCollab4so_initialize.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  UncontrolInterCollab4so_terminate.cpp /Fobuild\\win64\\UncontrolInterCollab4so_terminate.obj",
+    "file": "UncontrolInterCollab4so_terminate.cpp",
+    "output": "build/win64/UncontrolInterCollab4so_terminate.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  UncontrolInterCollab4so.cpp /Fobuild\\win64\\UncontrolInterCollab4so.obj",
+    "file": "UncontrolInterCollab4so.cpp",
+    "output": "build/win64/UncontrolInterCollab4so.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  ismember.cpp /Fobuild\\win64\\ismember.obj",
+    "file": "ismember.cpp",
+    "output": "build/win64/ismember.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  issorted.cpp /Fobuild\\win64\\issorted.obj",
+    "file": "issorted.cpp",
+    "output": "build/win64/issorted.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  indexShapeCheck.cpp /Fobuild\\win64\\indexShapeCheck.obj",
+    "file": "indexShapeCheck.cpp",
+    "output": "build/win64/indexShapeCheck.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  find.cpp /Fobuild\\win64\\find.obj",
+    "file": "find.cpp",
+    "output": "build/win64/find.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  isequal.cpp /Fobuild\\win64\\isequal.obj",
+    "file": "isequal.cpp",
+    "output": "build/win64/isequal.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  abs.cpp /Fobuild\\win64\\abs.obj",
+    "file": "abs.cpp",
+    "output": "build/win64/abs.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  unique.cpp /Fobuild\\win64\\unique.obj",
+    "file": "unique.cpp",
+    "output": "build/win64/unique.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  eml_setop.cpp /Fobuild\\win64\\eml_setop.obj",
+    "file": "eml_setop.cpp",
+    "output": "build/win64/eml_setop.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  sum.cpp /Fobuild\\win64\\sum.obj",
+    "file": "sum.cpp",
+    "output": "build/win64/sum.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  repmat.cpp /Fobuild\\win64\\repmat.obj",
+    "file": "repmat.cpp",
+    "output": "build/win64/repmat.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  interface\\_coder_UncontrolInterCollab4so_api.cpp /Fobuild\\win64\\_coder_UncontrolInterCollab4so_api.obj",
+    "file": "interface/_coder_UncontrolInterCollab4so_api.cpp",
+    "output": "build/win64/_coder_UncontrolInterCollab4so_api.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  interface\\_coder_UncontrolInterCollab4so_mex.cpp /Fobuild\\win64\\_coder_UncontrolInterCollab4so_mex.obj",
+    "file": "interface/_coder_UncontrolInterCollab4so_mex.cpp",
+    "output": "build/win64/_coder_UncontrolInterCollab4so_mex.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  eml_int_forloop_overflow_check.cpp /Fobuild\\win64\\eml_int_forloop_overflow_check.obj",
+    "file": "eml_int_forloop_overflow_check.cpp",
+    "output": "build/win64/eml_int_forloop_overflow_check.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  sumMatrixIncludeNaN.cpp /Fobuild\\win64\\sumMatrixIncludeNaN.obj",
+    "file": "sumMatrixIncludeNaN.cpp",
+    "output": "build/win64/sumMatrixIncludeNaN.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  sort.cpp /Fobuild\\win64\\sort.obj",
+    "file": "sort.cpp",
+    "output": "build/win64/sort.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  sortIdx.cpp /Fobuild\\win64\\sortIdx.obj",
+    "file": "sortIdx.cpp",
+    "output": "build/win64/sortIdx.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  interface\\_coder_UncontrolInterCollab4so_info.cpp /Fobuild\\win64\\_coder_UncontrolInterCollab4so_info.obj",
+    "file": "interface/_coder_UncontrolInterCollab4so_info.cpp",
+    "output": "build/win64/_coder_UncontrolInterCollab4so_info.obj"
+  },
+  {
+    "directory": "C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\\codegen\\mex\\UncontrolInterCollab4so",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\Chen Deng\\Desktop\\CodeManage\\UncontrolledIntersectionCollaboration\" /I \".\\interface\" /I \"C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\include\" /I \".\" -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251  C:\\ProgramFiles\\MATLAB\\R2022b\\extern\\version\\cpp_mexapi_version.cpp /Fobuild\\win64\\cpp_mexapi_version.obj",
+    "file": "C:/ProgramFiles/MATLAB/R2022b/extern/version/cpp_mexapi_version.cpp",
+    "output": "build/win64/cpp_mexapi_version.obj"
+  }
+]

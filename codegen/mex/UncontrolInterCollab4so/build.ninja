@@ -1,0 +1,66 @@
+# CompilerName=msvcpp170
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root\build\win64
+matlabdir = C:\ProgramFiles\MATLAB\R2022b
+startdir = C:\Users\Chen Deng\Desktop\CodeManage\UncontrolledIntersectionCollaboration
+
+# Toolchain information
+cc = cl
+cxx = cl
+linker = link
+linkerxx = link
+
+cflags =  /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I "$root" /I "$startdir" /I "$root\interface" /I "$matlabdir\extern\include" /I "." -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251 
+
+cxxflags =   /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I "$root" /I "$startdir" /I "$root\interface" /I "$matlabdir\extern\include" /I "." -DMODEL=UncontrolInterCollab4so_mex -DMW_NEEDS_VERSION_H /openmp /wd4101 /wd4251 
+
+ldflags =  /nologo /manifest   /DLL /LIBPATH:"$matlabdir\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libMatlabDataArray.lib libMatlabEngine.lib  /out:"UncontrolInterCollab4so_mex.mexw64" libemlrt.lib libcovrt.lib libut.lib libmwmathutil.lib libiomp5md.lib /nodefaultlib:vcomp /LIBPATH:"$matlabdir\bin\win64"
+
+linkobjs = 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in /Fo$out
+
+rule cxx
+    command = $cxx $cxxflags $in /Fo$out
+
+rule link
+    command = $linker @$out.rsp $linkobjs $ldflags
+    rspfile = $out.rsp
+    rspfile_content = $in
+
+rule linkxx
+    command = $linkerxx $in $linkobjs $ldflags
+
+# Build
+build $builddir\UncontrolInterCollab4so_data.obj : cxx $root\UncontrolInterCollab4so_data.cpp
+build $builddir\rt_nonfinite.obj : cxx $root\rt_nonfinite.cpp
+build $builddir\UncontrolInterCollab4so_initialize.obj : cxx $root\UncontrolInterCollab4so_initialize.cpp
+build $builddir\UncontrolInterCollab4so_terminate.obj : cxx $root\UncontrolInterCollab4so_terminate.cpp
+build $builddir\UncontrolInterCollab4so.obj : cxx $root\UncontrolInterCollab4so.cpp
+build $builddir\ismember.obj : cxx $root\ismember.cpp
+build $builddir\issorted.obj : cxx $root\issorted.cpp
+build $builddir\indexShapeCheck.obj : cxx $root\indexShapeCheck.cpp
+build $builddir\find.obj : cxx $root\find.cpp
+build $builddir\isequal.obj : cxx $root\isequal.cpp
+build $builddir\abs.obj : cxx $root\abs.cpp
+build $builddir\unique.obj : cxx $root\unique.cpp
+build $builddir\eml_setop.obj : cxx $root\eml_setop.cpp
+build $builddir\sum.obj : cxx $root\sum.cpp
+build $builddir\repmat.obj : cxx $root\repmat.cpp
+build $builddir\_coder_UncontrolInterCollab4so_api.obj : cxx $root\interface\_coder_UncontrolInterCollab4so_api.cpp
+build $builddir\_coder_UncontrolInterCollab4so_mex.obj : cxx $root\interface\_coder_UncontrolInterCollab4so_mex.cpp
+build $builddir\eml_int_forloop_overflow_check.obj : cxx $root\eml_int_forloop_overflow_check.cpp
+build $builddir\sumMatrixIncludeNaN.obj : cxx $root\sumMatrixIncludeNaN.cpp
+build $builddir\sort.obj : cxx $root\sort.cpp
+build $builddir\sortIdx.obj : cxx $root\sortIdx.cpp
+build $builddir\_coder_UncontrolInterCollab4so_info.obj : cxx $root\interface\_coder_UncontrolInterCollab4so_info.cpp
+build $builddir\cpp_mexapi_version.obj : cxx $matlabdir\extern\version\cpp_mexapi_version.cpp
+
+# Link
+build $root\UncontrolInterCollab4so_mex.mexw64 : linkxx $builddir\UncontrolInterCollab4so_data.obj $builddir\rt_nonfinite.obj $builddir\UncontrolInterCollab4so_initialize.obj $builddir\UncontrolInterCollab4so_terminate.obj $builddir\UncontrolInterCollab4so.obj $builddir\ismember.obj $builddir\issorted.obj $builddir\indexShapeCheck.obj $builddir\find.obj $builddir\isequal.obj $builddir\abs.obj $builddir\unique.obj $builddir\eml_setop.obj $builddir\sum.obj $builddir\repmat.obj $builddir\_coder_UncontrolInterCollab4so_api.obj $builddir\_coder_UncontrolInterCollab4so_mex.obj $builddir\eml_int_forloop_overflow_check.obj $builddir\sumMatrixIncludeNaN.obj $builddir\sort.obj $builddir\sortIdx.obj $builddir\_coder_UncontrolInterCollab4so_info.obj $builddir\cpp_mexapi_version.obj 

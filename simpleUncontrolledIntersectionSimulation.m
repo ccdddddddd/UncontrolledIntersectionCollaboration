@@ -24,7 +24,7 @@ disProfile = cell(1, 10);
 % 读取XML文件并将其存储在一个名为xmlDoc的变量中
 % xmlDoc = xmlread('simpleMapUncontrolledIntersection.net.xml');
 DEPARTSPEEDexample=6;
-usecaseNum=9;
+usecaseNum=10;
 for i = 1:1: duration
     traci.simulation.step();
     %% 放置车辆
